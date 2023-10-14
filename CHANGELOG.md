@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/SILVAWesley/lilias-portfolio/compare/v0.0.3...v0.0.4) (2023-10-14)
+
+
+### 🚚 Chores
+
+* **.husky:** add git pre-commit hook ([dd65ecd](https://github.com/SILVAWesley/lilias-portfolio/commit/dd65ecdf699bb38ccac02ad392a9677ad7cc2d75))
+
 ### [0.0.3](///compare/v0.0.2...v0.0.3) (2023-10-14)
 
 ### 🚚 Chores
