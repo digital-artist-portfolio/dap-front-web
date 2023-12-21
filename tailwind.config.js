@@ -6,6 +6,9 @@ export default {
 	},
 	theme: {
 		extend: {
+			screens: {
+				'3xl': '2560px'
+			},
 			fontFamily: {
 				handwriting: ['Delius Unicase', 'sans-serif'],
 				serif: ['Roboto Slab Variable', 'serif'],

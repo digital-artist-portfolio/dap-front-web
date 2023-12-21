@@ -8,7 +8,9 @@
 	console.log(data.art, 'art');
 </script>
 
-<div class="grid grid-cols-3 gap-6 p-12 max-lg:grid-cols-2 max-sm:grid-cols-1">
+<div
+	class="3xl:grid-cols-5 grid grid-cols-1 gap-6 p-12 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4"
+>
 	{#each data.arts.data as { id, attributes: { Alt: alt, Image: { data: { attributes: { url } } } } }}
 		<ArtCard {alt} {id} src={url} />
 	{/each}
