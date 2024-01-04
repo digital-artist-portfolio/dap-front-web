@@ -1,9 +1,8 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { InstagramIcon, LinkedinIcon, MenuIcon } from 'svelte-feather-icons';
+	import { MenuIcon } from 'svelte-feather-icons';
 	import NavCategory from '../../NavCategory.svelte';
 	import { LanguageDropdown, ThemeButton } from '$components';
-	import SMButton from '../../SocialMediaLink.svelte';
 	import { infoStore, userOptionsStore } from '$stores';
 	import Drawer from '$components/drawer/Drawer.svelte';
 
@@ -30,20 +29,6 @@
 					<NavCategory active={active === '/about'} href="/about">About</NavCategory>
 				</ul>
 			</nav>
-
-			<!--<ul class="flex gap-6">
-				<li>
-					<SMButton ariaLabel="Instagram"
-						><slot title="icon"><InstagramIcon size="28" /></slot></SMButton
-					>
-				</li>
-
-				<li>
-					<SMButton ariaLabel="Instagram"
-						><slot title="icon"><LinkedinIcon size="28" /></slot></SMButton
-					>
-				</li>
-			</ul>-->
 
 			<LanguageDropdown />
 			<ThemeButton />

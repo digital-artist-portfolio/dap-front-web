@@ -9,6 +9,8 @@ const config = {
 
 	kit: {
 		alias: {
+			$i18n: 'src/i18n',
+			$assets: 'src/assets',
 			$stores: 'src/stores',
 			$services: 'src/services',
 			$models: 'src/models',

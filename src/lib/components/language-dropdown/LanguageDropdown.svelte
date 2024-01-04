@@ -10,7 +10,6 @@
 		{#each $localesStore as { id, code, name } (id)}
 			<li>
 				<a
-					data-sveltekit-reload
 					href={`?locale=${code}`}
 					class:active={$userOptionsStore.locale === code}
 					on:click={() => {

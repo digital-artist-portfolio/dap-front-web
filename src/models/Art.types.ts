@@ -1,8 +1,8 @@
 export interface IArt {
 	id: number;
 	attributes: {
-		Name: string;
-		Description: {
+		name: string;
+		description: {
 			type: string;
 			children: { type: string; text: string }[];
 		}[];
@@ -10,8 +10,8 @@ export interface IArt {
 		updatedAt: string;
 		publishedAt: string;
 		locale: string;
-		Alt: string;
-		Image: {
+		alt: string;
+		image: {
 			data: {
 				id: number;
 				attributes: {
@@ -42,16 +42,6 @@ export interface IArt {
 					};
 				};
 			};
-		};
-		next?: {
-			data: {
-				id: number;
-			} | null;
-		};
-		previous?: {
-			data: {
-				id: number;
-			} | null;
 		};
 	};
 }

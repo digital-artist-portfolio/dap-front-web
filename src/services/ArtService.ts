@@ -1,4 +1,5 @@
-import type { IArt, IPaginatedRequest, ICmsRequest } from '../models';
+import type { IArt } from '$models';
+import type { ICmsRequest, IPaginatedRequest } from '$types';
 import cmsApi from './cmsApi';
 
 export class ArtService {
@@ -6,7 +7,7 @@ export class ArtService {
 		const url = '/arts';
 		const { data } = await cmsApi.get<IGetArtsRes>(url, {
 			params: {
-				populate: 'Image',
+				populate: 'image',
 				sort: 'createdAt:desc'
 			}
 		});

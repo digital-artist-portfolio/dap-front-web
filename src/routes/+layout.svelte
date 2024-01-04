@@ -1,11 +1,12 @@
 <script lang="ts">
-	import Header from '../lib/components/header/Header.svelte';
-	import { Footer } from '$components';
+	import { Footer, Header } from '$components';
 	import './styles.css';
 
 	import type { LayoutData } from './$types';
 
 	import { infoStore, localesStore, userOptionsStore } from '$stores';
+
+	import { LL } from '$i18n/i18n-svelte';
 
 	export let data: LayoutData;
 
