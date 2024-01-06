@@ -9,8 +9,8 @@
 	$: active = $page.route.id;
 </script>
 
-<header class="sticky top-0 flex-col bg-base-100">
-	<div class="flex w-full px-10 py-4">
+<header class="flex flex-col items-center bg-base-100">
+	<div class="p-layout flex w-full max-w-screen-2xl">
 		<div class="flex flex-col gap-1">
 			<h1
 				class="text-center font-handwriting text-2xl font-bold uppercase tracking-wide md:text-4xl"

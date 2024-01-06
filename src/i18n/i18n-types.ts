@@ -14,17 +14,17 @@ export type Translation = RootTranslation
 export type Translations = RootTranslation
 
 type RootTranslation = {
-	copy: {
-		/**
-		 * c​o​p​i​a​r
-		 */
-		tooltip: string
-		/**
-		 * C​o​p​i​a​d​o​ ​c​o​m​ ​s​u​c​e​s​s​o​!
-		 */
-		success: string
-	}
 	footer: {
+		copy: {
+			/**
+			 * C​o​p​i​a​r​ ​e​m​a​i​l
+			 */
+			tooltip: string
+			/**
+			 * E​m​a​i​l​ ​c​o​p​i​a​d​o​ ​c​o​m​ ​s​u​c​e​s​s​o​!
+			 */
+			success: string
+		}
 		/**
 		 * c​o​n​t​a​t​o
 		 */
@@ -49,17 +49,17 @@ type RootTranslation = {
 }
 
 export type TranslationFunctions = {
-	copy: {
-		/**
-		 * copiar
-		 */
-		tooltip: () => LocalizedString
-		/**
-		 * Copiado com sucesso!
-		 */
-		success: () => LocalizedString
-	}
 	footer: {
+		copy: {
+			/**
+			 * Copiar email
+			 */
+			tooltip: () => LocalizedString
+			/**
+			 * Email copiado com sucesso!
+			 */
+			success: () => LocalizedString
+		}
 		/**
 		 * contato
 		 */

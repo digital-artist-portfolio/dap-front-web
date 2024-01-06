@@ -9,7 +9,7 @@
 
 <Toaster />
 
-<footer class="p-layout grid grid-flow-row gap-14 bg-base-300">
+<footer class="p-layout grid grid-flow-row place-items-center gap-14 bg-base-300">
 	<div class="footer w-full max-w-screen-2xl grid-flow-row justify-between md:grid-flow-col">
 		<!-- Logo -->
 		<div class="flex flex-row">
@@ -50,25 +50,27 @@
 			</nav>
 		</div>
 
+		<!-- Contact -->
 		<div>
 			<h2 class="footer-title">{$LL.footer.contact()}</h2>
 
-			<div class="group flex flex-row gap-1">
+			<div class="group flex flex-row items-center gap-1 first-letter:capitalize">
 				<a href={`mailto:${$infoStore.attributes.email}`} class="link-hover link"
 					>{$infoStore.attributes.email}</a
 				>
 
-				<div class="tooltip capitalize" data-tip={$LL.copy.tooltip()}>
+				<div class="tooltip" data-tip={$LL.footer.copy.tooltip()}>
 					<button
-						on:svelte-copy={(event) => toast($LL.copy.success(), { icon: CheckIcon })}
+						on:svelte-copy={(event) => toast($LL.footer.copy.success(), { icon: CheckIcon })}
 						use:copy={$infoStore.attributes.email}
-						class="btn btn-ghost btn-xs opacity-0 group-hover:opacity-100"
+						class="btn btn-ghost btn-xs opacity-100 focus-visible:opacity-100 group-hover:opacity-100 md:opacity-0"
 						type="button"><ClipboardIcon size="16" /></button
 					>
 				</div>
 			</div>
 		</div>
 
+		<!-- Social Medias -->
 		<div>
 			<h2 class="footer-title">{$LL.footer.follow()}</h2>
 

@@ -1,8 +1,8 @@
 import type { Translation } from '../i18n-types';
 
 const en = {
-	copy: { tooltip: 'copy', success: 'Successfully copied!' },
 	footer: {
+		copy: { tooltip: 'Copy email', success: 'Email successfully copied!' },
 		contact: 'contact',
 		follow: 'follow',
 		links: 'links',

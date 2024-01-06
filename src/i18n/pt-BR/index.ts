@@ -1,8 +1,8 @@
 import type { BaseTranslation } from '../i18n-types';
 
 const ptBR = {
-	copy: { tooltip: 'copiar', success: 'Copiado com sucesso!' },
 	footer: {
+		copy: { tooltip: 'Copiar email', success: 'Email copiado com sucesso!' },
 		contact: 'contato',
 		follow: 'seguir',
 		links: 'links',
