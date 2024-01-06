@@ -1,12 +1,9 @@
 <script lang="ts">
 	import { Footer, Header } from '$components';
-	import './styles.css';
-
-	import type { LayoutData } from './$types';
-
 	import { infoStore, localesStore, userOptionsStore } from '$stores';
-
-	import { LL } from '$i18n/i18n-svelte';
+	import { Toaster } from 'svelte-french-toast';
+	import type { LayoutData } from './$types';
+	import './styles.css';
 
 	export let data: LayoutData;
 
@@ -23,3 +20,5 @@
 
 	<Footer />
 </div>
+
+<Toaster />

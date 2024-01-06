@@ -14,11 +14,8 @@ export default {
 				serif: ['Roboto Slab Variable', 'serif'],
 				sans: ['Raleway Variable', 'sans-serif']
 			},
-			backgroundImage: {
-				cover: '/cover-illustration.jpg'
-			},
-			backdropBrightness: {
-				25: '.25'
+			padding: {
+				layout: '40px'
 			}
 		}
 	},

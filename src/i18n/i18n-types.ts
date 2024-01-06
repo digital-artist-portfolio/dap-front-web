@@ -14,36 +14,72 @@ export type Translation = RootTranslation
 export type Translations = RootTranslation
 
 type RootTranslation = {
-	/**
-	 * c​o​n​t​a​c​t
-	 */
-	contact: string
+	copy: {
+		/**
+		 * c​o​p​i​a​r
+		 */
+		tooltip: string
+		/**
+		 * C​o​p​i​a​d​o​ ​c​o​m​ ​s​u​c​e​s​s​o​!
+		 */
+		success: string
+	}
 	footer: {
 		/**
 		 * c​o​n​t​a​t​o
 		 */
 		contact: string
 		/**
-		 * f​o​l​l​o​w
+		 * s​e​g​u​i​r
 		 */
 		follow: string
+		/**
+		 * l​i​n​k​s
+		 */
+		links: string
+		/**
+		 * i​d​i​o​m​a​s
+		 */
+		languages: string
+		/**
+		 * D​e​s​e​n​v​o​l​v​i​d​o​ ​p​o​r
+		 */
+		dev: string
 	}
 }
 
 export type TranslationFunctions = {
-	/**
-	 * contact
-	 */
-	contact: () => LocalizedString
+	copy: {
+		/**
+		 * copiar
+		 */
+		tooltip: () => LocalizedString
+		/**
+		 * Copiado com sucesso!
+		 */
+		success: () => LocalizedString
+	}
 	footer: {
 		/**
 		 * contato
 		 */
 		contact: () => LocalizedString
 		/**
-		 * follow
+		 * seguir
 		 */
 		follow: () => LocalizedString
+		/**
+		 * links
+		 */
+		links: () => LocalizedString
+		/**
+		 * idiomas
+		 */
+		languages: () => LocalizedString
+		/**
+		 * Desenvolvido por
+		 */
+		dev: () => LocalizedString
 	}
 }
 

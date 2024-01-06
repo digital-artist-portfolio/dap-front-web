@@ -1,6 +1,7 @@
 @import '@fontsource/delius-unicase';
 @import '@fontsource-variable/roboto-slab';
 @import '@fontsource-variable/raleway';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -15,10 +16,9 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-	background: #57534e;
+	@apply bg-neutral;
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #a8a29e;
-	border-radius: 16px;
+	@apply rounded-xl bg-neutral-content;
 }

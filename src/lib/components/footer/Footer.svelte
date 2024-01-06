@@ -1,64 +1,99 @@
 <script lang="ts">
-	import InstagramSolidIcon from '$assets/instagram-solid-icon.svelte';
-	import InstagramSolid from '$assets/instagram-solid-icon.svelte';
-	import LinkedinSolidIcon from '$assets/linkedin-solid-icon.svelte';
-	import { InstagramIcon, LinkedinIcon } from 'svelte-feather-icons';
-
-	import type { HTMLInputAttributes } from 'svelte/elements';
-	import { twMerge } from 'tailwind-merge';
-	import { LL } from '$i18n/i18n-svelte';
-
-	interface $$Props extends HTMLInputAttributes {}
-
-	export let className: string = '';
-
-	export { className as class };
+	import { InstagramSolidIcon, LinkedInSolidIcon } from '$assets';
+	import { LL } from '$i18n';
+	import { infoStore, localesStore, userOptionsStore } from '$stores';
+	import { copy } from 'svelte-copy';
+	import { CheckIcon, ClipboardIcon } from 'svelte-feather-icons';
+	import toast, { Toaster } from 'svelte-french-toast';
 </script>
 
-<footer
-	class={twMerge(
-		'footer justify-center bg-base-200 px-16 py-16 text-neutral-content sm:grid-flow-col sm:justify-between sm:text-center',
-		className
-	)}
-	{...$$props}
->
-	<!--px-32 py-16-->
-	<div class="flex flex-col items-center justify-center text-center sm:items-start">
-		<p class="font-sans text-xl font-medium text-base-content">Lilia Graziely</p>
-		<p class="font-sans text-lg font-medium text-base-content">Digital Artist</p>
-	</div>
+<Toaster />
 
-	<div class="flex flex-col">
-		<div class="flex gap-2">
-			<a href="/arts" class="link">Arts</a>
+<footer class="p-layout grid grid-flow-row gap-14 bg-base-300">
+	<div class="footer w-full max-w-screen-2xl grid-flow-row justify-between md:grid-flow-col">
+		<!-- Logo -->
+		<div class="flex flex-row">
+			<p class="font-sans text-xl font-medium text-base-content">LOGO</p>
+			<p class="font-sans text-lg font-medium text-base-content">Lilia Graziely</p>
+		</div>
 
-			<circle cx="100" cy="100" r="20" />
+		<!-- Navigation Links -->
+		<div>
+			<h2 class="footer-title">{$LL.footer.links()}</h2>
 
-			<a href="/about" class="link text-base">About</a>
+			<nav>
+				<ul>
+					<li><a href="/arts" class="link-hover link">Arts</a></li>
+					<li><a href="/about" class="link-hover link">About</a></li>
+				</ul>
+			</nav>
+		</div>
 
-			|
+		<!-- Languages -->
+		<div>
+			<h2 class="footer-title">{$LL.footer.languages()}</h2>
 
-			<a href="?locale=en" data-sveltekit-reload class="link text-base">English</a>
-			<a href="?locale=pt-BR" data-sveltekit-reload class="link text-base">Português (BR)</a>
+			<nav>
+				<ul>
+					{#each $localesStore as { id, code, name } (id)}
+						<li>
+							<a
+								href={`?locale=${code}`}
+								class="link-hover link"
+								on:click={() => {
+									userOptionsStore.setLocale(code);
+								}}>{name}</a
+							>
+						</li>
+					{/each}
+				</ul>
+			</nav>
+		</div>
+
+		<div>
+			<h2 class="footer-title">{$LL.footer.contact()}</h2>
+
+			<div class="group flex flex-row gap-1">
+				<a href={`mailto:${$infoStore.attributes.email}`} class="link-hover link"
+					>{$infoStore.attributes.email}</a
+				>
+
+				<div class="tooltip capitalize" data-tip={$LL.copy.tooltip()}>
+					<button
+						on:svelte-copy={(event) => toast($LL.copy.success(), { icon: CheckIcon })}
+						use:copy={$infoStore.attributes.email}
+						class="btn btn-ghost btn-xs opacity-0 group-hover:opacity-100"
+						type="button"><ClipboardIcon size="16" /></button
+					>
+				</div>
+			</div>
+		</div>
+
+		<div>
+			<h2 class="footer-title">{$LL.footer.follow()}</h2>
+
+			<nav>
+				<ul class="flex flex-row gap-4">
+					<li>
+						<a target="_blank" aria-label="Instagram" href={$infoStore.attributes.instagram}
+							><InstagramSolidIcon size="28" /></a
+						>
+					</li>
+
+					<li>
+						<a target="_blank" aria-label="LinkedIn" href={$infoStore.attributes.linkedin}
+							><LinkedInSolidIcon size="28" /></a
+						>
+					</li>
+				</ul>
+			</nav>
 		</div>
 	</div>
 
-	<div class="flex flex-col">
-		<h2 class="footer-title text-xl text-base-content opacity-100">{$LL.footer.contact()}</h2>
-		<a href="mailto:liliagraziely@gmail.com" class="link text-base">liliagraziely@gmail.com</a>
+	<div class="flex justify-center text-sm">
+		<span
+			>{$LL.footer.dev()}
+			<a href={$infoStore.attributes.dev} class="link-hover link">SILVAWesley</a></span
+		>
 	</div>
-
-	<nav>
-		<h2 class="footer-title text-xl text-base-content opacity-100">FOLLOW</h2>
-
-		<ul class="flex w-full flex-1 justify-center gap-4 text-base-content sm:justify-end">
-			<li>
-				<a aria-label="Instagram" href="/"><InstagramSolidIcon size="32" /></a>
-			</li>
-
-			<li>
-				<a aria-label="LinkedIn" href="/"><LinkedinSolidIcon size="32" /></a>
-			</li>
-		</ul>
-	</nav>
 </footer>

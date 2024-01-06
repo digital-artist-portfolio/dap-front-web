@@ -1,10 +1,13 @@
 import type { BaseTranslation } from '../i18n-types';
 
 const ptBR = {
-	contact: 'contact',
+	copy: { tooltip: 'copiar', success: 'Copiado com sucesso!' },
 	footer: {
 		contact: 'contato',
-		follow: 'follow'
+		follow: 'seguir',
+		links: 'links',
+		languages: 'idiomas',
+		dev: 'Desenvolvido por'
 	}
 } satisfies BaseTranslation;
 
