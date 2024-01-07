@@ -19,7 +19,7 @@
 
 		<!-- Navigation Links -->
 		<div>
-			<h2 class="footer-title">{$LL.footer.links()}</h2>
+			<h2 class="footer-title opacity-80">{$LL.footer.links()}</h2>
 
 			<nav>
 				<ul>
@@ -31,7 +31,7 @@
 
 		<!-- Languages -->
 		<div>
-			<h2 class="footer-title">{$LL.footer.languages()}</h2>
+			<h2 class="footer-title opacity-80">{$LL.footer.languages()}</h2>
 
 			<nav>
 				<ul>
@@ -52,7 +52,7 @@
 
 		<!-- Contact -->
 		<div>
-			<h2 class="footer-title">{$LL.footer.contact()}</h2>
+			<h2 class="footer-title opacity-80">{$LL.footer.contact()}</h2>
 
 			<div class="group flex flex-row items-center gap-1 first-letter:capitalize">
 				<a href={`mailto:${$infoStore.attributes.email}`} class="link-hover link"
@@ -72,7 +72,7 @@
 
 		<!-- Social Medias -->
 		<div>
-			<h2 class="footer-title">{$LL.footer.follow()}</h2>
+			<h2 class="footer-title opacity-80">{$LL.footer.follow()}</h2>
 
 			<nav>
 				<ul class="flex flex-row gap-4">

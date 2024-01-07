@@ -14,7 +14,7 @@
 <div class="flex h-full flex-col" data-theme={$userOptionsStore.theme}>
 	<Header />
 
-	<main class="flex-1">
+	<main class="p-layout flex-1">
 		<slot />
 	</main>
 

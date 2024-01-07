@@ -14,6 +14,16 @@ export type Translation = RootTranslation
 export type Translations = RootTranslation
 
 type RootTranslation = {
+	navigation: {
+		/**
+		 * A​r​t​e​s
+		 */
+		arts: string
+		/**
+		 * S​o​b​r​e
+		 */
+		about: string
+	}
 	footer: {
 		copy: {
 			/**
@@ -49,6 +59,16 @@ type RootTranslation = {
 }
 
 export type TranslationFunctions = {
+	navigation: {
+		/**
+		 * Artes
+		 */
+		arts: () => LocalizedString
+		/**
+		 * Sobre
+		 */
+		about: () => LocalizedString
+	}
 	footer: {
 		copy: {
 			/**
