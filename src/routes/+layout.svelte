@@ -7,11 +7,11 @@
 
 	export let data: LayoutData;
 
-	$localesStore = data.locales;
+	localesStore.setLocales(data.locales, data.locale);
 	$infoStore = data.info.data;
 </script>
 
-<div class="flex h-full flex-col" data-theme={$userOptionsStore.theme}>
+<div class="flex h-full flex-col">
 	<Header />
 
 	<main class="p-layout flex-1">

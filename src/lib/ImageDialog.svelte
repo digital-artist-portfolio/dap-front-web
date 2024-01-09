@@ -60,8 +60,8 @@
 		</div>
 		<div class="flex flex-1 items-center justify-center">
 			<img
-				src={`${PUBLIC_ASSETS_URL}${data.attributes.Image.data.attributes.url}`}
-				alt={data.attributes.Alt}
+				src={`${PUBLIC_ASSETS_URL}${data.attributes.image.data.attributes.url}`}
+				alt={data.attributes.alt}
 				class="h-3/5 shadow-2xl"
 			/>
 		</div>
@@ -72,10 +72,3 @@
 		</div>
 	</div>
 </dialog>
-
-<style>
-	:global(html, body) {
-		overflow-y: hidden;
-		height: 100vh;
-	}
-</style>

@@ -1,11 +1,15 @@
 import type { LayoutLoad } from './$types';
-import { loadLocaleAsync } from '$i18n/i18n-util.async';
-import { setLocale } from '$i18n/i18n-svelte';
-import { detectLocale } from '$i18n/i18n-util';
+import { loadLocaleAsync, setLocale } from '$i18n';
+import { browser } from '$app/environment';
 
 export const load: LayoutLoad = async ({ data }) => {
-	const locale = detectLocale(() => [data.currentLocale ?? '']);
-	await loadLocaleAsync(locale);
-	setLocale(locale);
+	await loadLocaleAsync(data.locale);
+	setLocale(data.locale);
+
+	/* if (browser) {
+		const x = window.matchMedia('(prefers-color-scheme: dark)');
+		console.log('match', x.matches);
+	} */
+
 	return data;
 };

@@ -4,7 +4,11 @@
 	import { infoStore, localesStore, userOptionsStore } from '$stores';
 	import { copy } from 'svelte-copy';
 	import { CheckIcon, ClipboardIcon } from 'svelte-feather-icons';
-	import toast, { Toaster } from 'svelte-french-toast';
+	import toast, { Toaster, type Renderable } from 'svelte-french-toast';
+
+	function handleCopy() {
+		toast($LL.footer.copy.success(), { icon: CheckIcon as Renderable });
+	}
 </script>
 
 <Toaster />
@@ -35,9 +39,10 @@
 
 			<nav>
 				<ul>
-					{#each $localesStore as { id, code, name } (id)}
+					{#each $localesStore.locales as { id, code, name } (id)}
 						<li>
 							<a
+								data-sveltekit-reload
 								href={`?locale=${code}`}
 								class="link-hover link"
 								on:click={() => {
@@ -61,7 +66,7 @@
 
 				<div class="tooltip" data-tip={$LL.footer.copy.tooltip()}>
 					<button
-						on:svelte-copy={(event) => toast($LL.footer.copy.success(), { icon: CheckIcon })}
+						on:svelte-copy={handleCopy}
 						use:copy={$infoStore.attributes.email}
 						class="btn btn-ghost btn-xs opacity-100 focus-visible:opacity-100 group-hover:opacity-100 md:opacity-0"
 						type="button"><ClipboardIcon size="16" /></button
