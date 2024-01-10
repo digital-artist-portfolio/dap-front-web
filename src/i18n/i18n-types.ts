@@ -14,6 +14,20 @@ export type Translation = RootTranslation
 export type Translations = RootTranslation
 
 type RootTranslation = {
+	drawer: {
+		/**
+		 * p​á​g​i​n​a​s
+		 */
+		pages: string
+		/**
+		 * i​d​i​o​m​a​s
+		 */
+		languages: string
+		/**
+		 * t​e​m​a​s
+		 */
+		themes: string
+	}
 	navigation: {
 		/**
 		 * A​r​t​e​s
@@ -59,6 +73,20 @@ type RootTranslation = {
 }
 
 export type TranslationFunctions = {
+	drawer: {
+		/**
+		 * páginas
+		 */
+		pages: () => LocalizedString
+		/**
+		 * idiomas
+		 */
+		languages: () => LocalizedString
+		/**
+		 * temas
+		 */
+		themes: () => LocalizedString
+	}
 	navigation: {
 		/**
 		 * Artes
