@@ -1,6 +1,11 @@
 import type { BaseTranslation } from '../i18n-types';
 
 const ptBR = {
+	drawer: {
+		pages: 'páginas',
+		languages: 'idiomas',
+		themes: 'temas'
+	},
 	navigation: {
 		arts: 'Artes',
 		about: 'Sobre'

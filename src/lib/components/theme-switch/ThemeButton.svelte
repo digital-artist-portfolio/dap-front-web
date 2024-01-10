@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { themeStore } from '$stores';
 	import { MoonIcon, SunIcon } from 'svelte-feather-icons';
-	import { twMerge } from 'tailwind-merge';
+	import { twMerge, type ClassNameValue } from 'tailwind-merge';
+
+	export let variant: 'circle' | 'rounded-square' = 'rounded-square';
 
 	let className: string | undefined = undefined;
 	export { className as class };
@@ -16,10 +18,17 @@
 	}
 
 	$: checked = $themeStore.theme === 'light';
+
+	const circleStyles = 'btn-circle';
 </script>
 
 <div class={twMerge('flex items-center gap-2', className)}>
-	<label class={'btn btn-ghost swap swap-rotate outline-1 outline-black'}>
+	<label
+		class={twMerge(
+			'btn btn-ghost swap swap-rotate outline-1 outline-black',
+			variant === 'circle' && circleStyles
+		)}
+	>
 		<input {checked} type="checkbox" on:change={handleChange} />
 
 		<MoonIcon size="20" class="swap-on fill-current" />

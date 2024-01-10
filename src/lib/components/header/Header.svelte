@@ -38,14 +38,10 @@
 			</div>
 
 			<div class="flex items-center justify-end md:hidden">
-				<button class="btn btn-ghost" on:click={() => userOptionsStore.openDrawer()}>
-					<MenuIcon />
-				</button>
+				<Drawer />
 			</div>
 		</div>
 	</div>
 
 	<div class="h-0.5 bg-base-200" />
 </header>
-
-<Drawer class="md:hidden" />

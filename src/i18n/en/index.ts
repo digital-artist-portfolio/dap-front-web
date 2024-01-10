@@ -1,6 +1,11 @@
 import type { Translation } from '../i18n-types';
 
 const en = {
+	drawer: {
+		pages: 'pages',
+		languages: 'languages',
+		themes: 'themes'
+	},
 	navigation: {
 		arts: 'Arts',
 		about: 'About'
