@@ -4,6 +4,7 @@ declare global {
 	namespace App {
 		// interface Error {}
 		interface Locals {
+			theme?: TTheme;
 			locale: Locales;
 			LL: TranslationFunctions;
 		}

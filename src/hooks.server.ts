@@ -42,6 +42,8 @@ const handleTheme: Handle = async ({ event, resolve }) => {
 		return resolve(event);
 	}
 
+	event.locals.theme = currentTheme;
+
 	return resolve(event, {
 		transformPageChunk: ({ html }) => html.replace('%theme%', currentTheme)
 	});
