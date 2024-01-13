@@ -15,7 +15,7 @@
 <div class="flex h-full flex-col">
 	<Header />
 
-	<main class="p-layout flex-1">
+	<main class="flex-1 p-layout">
 		<slot />
 	</main>
 

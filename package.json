@@ -7,7 +7,7 @@
 		"commit": "cz",
 		"release": "standard-version --no-verify",
 		"dev": "npm-run-all --parallel typesafe-i18n dev:run",
-		"dev:run": "vite dev",
+		"dev:run": "vite dev --host",
 		"build": "vite build",
 		"preview": "vite preview",
 		"test": "npm run test:integration && npm run test:unit",
