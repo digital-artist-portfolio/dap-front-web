@@ -23,7 +23,7 @@
 	<div
 		class="grid w-full max-w-screen-2xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
 	>
-		{#each $artStore.arts as { id, attributes: { alt, image: { data: { attributes: { url } } } } } (id)}
+		{#each $artStore.arts as { id, attributes: { alt, image: { data: { attributes: { formats: { small: { url } } } } } } } (id)}
 			<ArtCard {alt} {id} src={url} />
 		{/each}
 	</div>

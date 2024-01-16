@@ -12,7 +12,3 @@ export const artStore = {
 	subscribe,
 	set
 };
-
-subscribe((val) => {
-	console.log('changed', val.art?.id);
-});
