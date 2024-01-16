@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 	import { MenuIcon } from 'svelte-feather-icons';
 	import { LanguageDropdown, ThemeButton } from '$components';
-	import { infoStore, userOptionsStore } from '$stores';
+	import { infoStore } from '$stores';
 	import Drawer from '$components/drawer/Drawer.svelte';
 	import Nav from './Nav.svelte';
 
@@ -10,7 +10,7 @@
 </script>
 
 <header class="bg-base-100">
-	<div class="p-layout flex justify-center">
+	<div class="flex justify-center p-layout">
 		<div class="flex w-full max-w-screen-2xl justify-between">
 			<!-- Page title -->
 			<div class="flex flex-col gap-1">

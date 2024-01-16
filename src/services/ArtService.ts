@@ -19,7 +19,7 @@ export class ArtService {
 		const url = `/arts/${id}`;
 		const { data } = await cmsApi.get<IGetArtByIdRes>(url, {
 			params: {
-				populate: ['Image', 'next', 'previous']
+				populate: ['image', 'next', 'previous']
 			}
 		});
 

@@ -11,7 +11,6 @@ export const load: PageServerLoad = async ({ url }) => {
 
 	if (!isNaN(intId)) {
 		const art = await ArtService.getArtById({ id: intId });
-
 		return { arts, art };
 	}
 

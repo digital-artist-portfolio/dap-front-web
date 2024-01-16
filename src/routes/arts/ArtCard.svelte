@@ -6,13 +6,14 @@
 	export let src: string;
 </script>
 
-<div class="shadow-md">
-	<a href={`/arts?id=${id}`} class="cursor-zoom-in"
+<div class="rounded-sm shadow-md">
+	<a data-sveltekit-noscroll href={`/arts?id=${id}`} class="cursor-zoom-in"
 		><img
 			{alt}
-			height="100px"
 			src={`${PUBLIC_ASSETS_URL}${src}`}
-			class="aspect-square w-full object-cover"
+			class="aspect-square object-cover"
+			width="100%"
+			height="100%"
 		/></a
 	>
 </div>

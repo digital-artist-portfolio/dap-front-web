@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { invalidateAll } from '$app/navigation';
-	import { localesStore, userOptionsStore } from '$stores';
+	import { localesStore } from '$stores';
 	import { GlobeIcon } from 'svelte-feather-icons';
 </script>
 

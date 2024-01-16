@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { InstagramSolidIcon, LinkedInSolidIcon } from '$assets';
 	import { LL } from '$i18n';
-	import { infoStore, localesStore, userOptionsStore } from '$stores';
+	import { infoStore, localesStore } from '$stores';
 	import { copy } from 'svelte-copy';
 	import { CheckIcon, ClipboardIcon } from 'svelte-feather-icons';
 	import toast, { Toaster, type Renderable } from 'svelte-french-toast';
@@ -13,7 +13,7 @@
 
 <Toaster />
 
-<footer class="p-layout grid grid-flow-row place-items-center gap-14 bg-base-300">
+<footer class="grid grid-flow-row place-items-center gap-14 bg-base-300 p-layout">
 	<div class="footer w-full max-w-screen-2xl grid-flow-row justify-between md:grid-flow-col">
 		<!-- Logo -->
 		<div class="flex flex-row">
@@ -41,14 +41,7 @@
 				<ul>
 					{#each $localesStore.locales as { id, code, name } (id)}
 						<li>
-							<a
-								data-sveltekit-reload
-								href={`?locale=${code}`}
-								class="link-hover link"
-								on:click={() => {
-									userOptionsStore.setLocale(code);
-								}}>{name}</a
-							>
+							<a data-sveltekit-reload href={`?locale=${code}`} class="link-hover link">{name}</a>
 						</li>
 					{/each}
 				</ul>
