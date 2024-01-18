@@ -13,7 +13,8 @@ export class CookieStorage {
 			sameSite: 'strict',
 			httpOnly: false,
 			maxAge: 30 * 24 * 60 * 60 /* 1 month */,
-			secure: !dev
+			secure: !dev,
+			path: '/'
 		});
 	}
 
@@ -26,7 +27,8 @@ export class CookieStorage {
 			sameSite: 'strict',
 			httpOnly: false,
 			maxAge: 30 * 24 * 60 * 60 /* 1 month */,
-			secure: !dev
+			secure: !dev,
+			path: '/'
 		});
 	}
 }
