@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { MenuIcon } from 'svelte-feather-icons';
-	import { LanguageDropdown, ThemeButton } from '$components';
+	import { LanguageDropdown, ThemeSwitch } from '$components';
 	import { infoStore } from '$stores';
 	import Drawer from '$components/drawer/Drawer.svelte';
 	import Nav from './Nav.svelte';
@@ -33,7 +32,7 @@
 				<!-- Configurations -->
 				<div class="flex gap-1">
 					<LanguageDropdown />
-					<ThemeButton />
+					<ThemeSwitch />
 				</div>
 			</div>
 

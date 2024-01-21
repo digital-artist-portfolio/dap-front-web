@@ -33,6 +33,7 @@
 		"@sveltejs/vite-plugin-svelte": "^3.0.1",
 		"@tailwindcss/typography": "^0.5.10",
 		"@testing-library/svelte": "^4.0.5",
+		"@testing-library/user-event": "^14.5.2",
 		"@typescript-eslint/eslint-plugin": "^6.0.0",
 		"@typescript-eslint/parser": "^6.13.2",
 		"@vitest/coverage-v8": "^1.2.1",

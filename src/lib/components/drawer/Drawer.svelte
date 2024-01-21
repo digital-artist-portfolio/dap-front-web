@@ -1,10 +1,9 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { ThemeSwitch } from '$components';
+	import { LL } from '$i18n';
 	import { localesStore, navigationStore } from '$stores';
 	import { MenuIcon, XIcon } from 'svelte-feather-icons';
-	import { LL } from '$i18n';
-	import { themes } from '$themes';
-	import ThemeButton from '$components/theme-switch/ThemeButton.svelte';
 
 	$: activeUrl = $page.route.id;
 
@@ -28,7 +27,7 @@
 				<label for="main-drawer" aria-label="close sidebar" class="btn btn-circle btn-ghost"
 					><XIcon /></label
 				>
-				<ThemeButton variant="circle" />
+				<ThemeSwitch variant="circle" />
 			</div>
 			<ul class="menu gap-2 p-1">
 				<!-- Navigation menu -->
