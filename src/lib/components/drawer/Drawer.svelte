@@ -2,10 +2,13 @@
 	import { page } from '$app/stores';
 	import { ThemeSwitch } from '$components';
 	import { LL } from '$i18n';
-	import { localesStore, navigationStore } from '$stores';
+	import { getLocalesStore, getNavigationStore, x } from '$stores';
 	import { MenuIcon, XIcon } from 'svelte-feather-icons';
 
+	$: navigationStore = x;
+
 	$: activeUrl = $page.route.id;
+	const localesStore = getLocalesStore();
 
 	let isOpen = false;
 </script>

@@ -1,9 +1,10 @@
 <script lang="ts">
-	import { themeStore } from '$stores';
+	import { getThemeStore } from '$stores';
 	import { MoonIcon, SunIcon } from 'svelte-feather-icons';
 	import { twMerge } from 'tailwind-merge';
 
 	export let variant: 'circle' | 'rounded-square' = 'rounded-square';
+	$: themeStore = getThemeStore();
 
 	function handleChange(
 		e: Event & {

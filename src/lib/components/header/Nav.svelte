@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { navigationStore } from '$stores';
+	import { getNavigationStore, x } from '$stores';
 	import { twMerge } from 'tailwind-merge';
+
+	const navigationStore = x;
 
 	const activeClasses = 'underline font-bold text-';
 	$: activeUrl = $page.route.id;

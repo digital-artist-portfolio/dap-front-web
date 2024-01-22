@@ -1,10 +1,12 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { PUBLIC_ASSETS_URL } from '$env/static/public';
-	import { artStore } from '$stores';
+	import { getArtStore } from '$stores';
 	import { twMerge } from 'tailwind-merge';
 
 	export let ref: HTMLDialogElement | undefined;
+
+	const artStore = getArtStore();
 
 	function handleClose() {
 		ref?.close();
@@ -14,7 +16,7 @@
 
 <dialog aria-modal bind:this={ref} class="modal" on:close={handleClose}>
 	<div
-		class="max-h-3/4 modal-box flex w-full max-w-[calc(75vh)] justify-center rounded-md p-0 sm:w-fit"
+		class="modal-box flex max-h-3/4 w-full max-w-[calc(75vh)] justify-center rounded-md p-0 sm:w-fit"
 		style="max-width: calc(75vh)"
 	>
 		<img

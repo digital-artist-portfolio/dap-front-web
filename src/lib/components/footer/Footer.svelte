@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { InstagramSolidIcon, LinkedInSolidIcon } from '$assets';
 	import { LL } from '$i18n';
-	import { infoStore, localesStore } from '$stores';
+	import { getInfoStore, getLocalesStore } from '$stores';
 	import { copy } from 'svelte-copy';
 	import { CheckIcon, ClipboardIcon } from 'svelte-feather-icons';
 	import toast, { Toaster, type Renderable } from 'svelte-french-toast';
@@ -9,6 +9,9 @@
 	function handleCopy() {
 		toast($LL.footer.copy.success(), { icon: CheckIcon as Renderable });
 	}
+
+	const infoStore = getInfoStore();
+	const localesStore = getLocalesStore();
 </script>
 
 <Toaster />

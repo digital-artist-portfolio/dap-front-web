@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { LanguageDropdown, ThemeSwitch } from '$components';
-	import { infoStore } from '$stores';
+	import { getInfoStore } from '$stores';
 	import Drawer from '$components/drawer/Drawer.svelte';
 	import Nav from './Nav.svelte';
 
 	$: active = $page.route.id;
+	const infoStore = getInfoStore();
 </script>
 
 <header class="bg-base-100">
