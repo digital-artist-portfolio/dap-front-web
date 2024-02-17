@@ -1,8 +1,6 @@
 import { ArtService } from '$services';
 import type { PageServerLoad } from './$types';
 
-export const prerender = true;
-
 export const load: PageServerLoad = async ({ url }) => {
 	const id = url.searchParams.get('id');
 	const intId = parseInt(id ?? '');

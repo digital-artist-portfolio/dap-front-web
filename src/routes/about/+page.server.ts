@@ -1,8 +1,6 @@
 import type { PageServerLoad } from './$types';
 import { InfoService } from '$services';
 
-export const prerender = true;
-
 export const load: PageServerLoad = async ({ url }) => {
 	const currentLocale = url.searchParams.get('locale');
 
