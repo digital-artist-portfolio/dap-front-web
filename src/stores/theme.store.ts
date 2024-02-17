@@ -8,7 +8,7 @@ export interface IThemeStore {
 	theme?: TTheme;
 }
 
-function createThemeStore(value?: IThemeStore) {
+export function createThemeStore(value?: IThemeStore) {
 	const { subscribe, set, update } = writable<IThemeStore>(value);
 
 	return {

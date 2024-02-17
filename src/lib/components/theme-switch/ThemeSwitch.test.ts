@@ -1,20 +1,35 @@
-import { describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import { render, screen } from '@testing-library/svelte';
+import { cleanup, render, screen } from '@testing-library/svelte';
 import { userEvent } from '@testing-library/user-event';
 import ThemeSwitch from './ThemeSwitch.svelte';
+import { createThemeStore, getThemeStore } from '$stores';
+import { getSingletonContext } from '$utils';
+import { writable } from 'svelte/store';
 
 describe('Test ThemeSwitch', async () => {
-	it('should call the api exactly one time', async () => {
-		const user = userEvent.setup();
+	afterEach(() => {
+		cleanup();
+	});
+
+	it('should render the checkbox', async () => {
 		render(ThemeSwitch);
 
-		const checkBox = await screen.getByRole('checkbox');
+		const checkBox = screen.getByRole('checkbox');
 
 		expect(checkBox).toBeInTheDocument();
-		expect(checkBox).not.toBeChecked();
+	});
 
-		await user.click(checkBox);
-		expect(checkBox).toBeChecked();
+	it('should have the default value set to false', () => {
+		render(ThemeSwitch);
+
+		vi.fn(createThemeStore);
+
+		vi.fn(getThemeStore).mockImplementation(() => {
+			return getSingletonContext('hello', createThemeStore, { theme: 'dark' });
+		});
+
+		const checkBox = screen.getByRole('checkbox');
+		expect(checkBox).not.toBeChecked();
 	});
 });

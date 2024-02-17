@@ -1,8 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import { PUBLIC_ASSETS_URL } from '$env/static/public';
 	import { getArtStore } from '$stores';
-	import { twMerge } from 'tailwind-merge';
 
 	export let ref: HTMLDialogElement | undefined;
 
@@ -21,7 +19,7 @@
 	>
 		<img
 			alt={$artStore.art?.attributes.alt}
-			src={`${PUBLIC_ASSETS_URL}${$artStore.art?.attributes.image.data.attributes.url}`}
+			src={`${$artStore.art?.attributes.image.data.attributes.url}`}
 			width="100%"
 			height="100%"
 			class="object-contain"

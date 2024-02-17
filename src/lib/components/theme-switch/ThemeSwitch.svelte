@@ -4,7 +4,7 @@
 	import { twMerge } from 'tailwind-merge';
 
 	export let variant: 'circle' | 'rounded-square' = 'rounded-square';
-	$: themeStore = getThemeStore();
+	const themeStore = getThemeStore();
 
 	function handleChange(
 		e: Event & {

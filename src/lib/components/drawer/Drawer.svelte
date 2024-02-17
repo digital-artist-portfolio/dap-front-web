@@ -2,10 +2,10 @@
 	import { page } from '$app/stores';
 	import { ThemeSwitch } from '$components';
 	import { LL } from '$i18n';
-	import { getLocalesStore, getNavigationStore, x } from '$stores';
+	import { getLocalesStore, getNavigationStore } from '$stores';
 	import { MenuIcon, XIcon } from 'svelte-feather-icons';
 
-	$: navigationStore = x;
+	const navigationStore = getNavigationStore();
 
 	$: activeUrl = $page.route.id;
 	const localesStore = getLocalesStore();
