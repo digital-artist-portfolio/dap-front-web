@@ -1,17 +1,20 @@
 import { derived } from 'svelte/store';
 import { LL } from '$i18n';
+import { getSingletonContext } from '$utils';
 
-export interface ICategory {
-	id: number;
-	name: string;
-	url: string;
+const NAVIGATION_STORE_KEY = 'navigation_store';
+
+function createNavigationStore() {
+	const { subscribe } = derived(LL, ($LL) => [
+		{ id: 0, url: '/arts', name: $LL.navigation.arts() },
+		{ id: 1, url: '/about', name: $LL.navigation.about() }
+	]);
+
+	return {
+		subscribe
+	};
 }
 
-const { subscribe } = derived(LL, ($LL) => [
-	{ id: 0, url: '/arts', name: $LL.navigation.arts() },
-	{ id: 1, url: '/about', name: $LL.navigation.about() }
-]);
-
-export const navigationStore = {
-	subscribe
-};
+export function getNavigationStore() {
+	return getSingletonContext(NAVIGATION_STORE_KEY, createNavigationStore);
+}

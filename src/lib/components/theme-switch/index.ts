@@ -1,3 +1,3 @@
-import ThemeButton from './ThemeButton.svelte';
+import ThemeSwitch from './ThemeSwitch.svelte';
 
-export { ThemeButton };
+export { ThemeSwitch };

@@ -1,11 +1,13 @@
 <script lang="ts">
-	import { artStore } from '$stores';
+	import { getArtStore } from '$stores';
 	import type { PageData } from './$types';
 	import ArtCard from './ArtCard.svelte';
 	import ArtDialog from './ArtDialog.svelte';
 
 	export let data: PageData;
 	let dialog: HTMLDialogElement;
+
+	const artStore = getArtStore();
 
 	$: {
 		$artStore = { art: data.art?.data, arts: data.arts.data };

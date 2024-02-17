@@ -16,7 +16,8 @@ const config = {
 			$models: 'src/models',
 			$components: 'src/lib/components',
 			$types: 'src/types',
-			$themes: 'src/themes'
+			$themes: 'src/themes',
+			$utils: 'src/utils'
 		},
 		//vscode-app/c:/Users/wesle/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html
 		// adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.

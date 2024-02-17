@@ -1,6 +1,8 @@
 <script lang="ts">
-	import { localesStore } from '$stores';
+	import { getLocalesStore } from '$stores';
 	import { GlobeIcon } from 'svelte-feather-icons';
+
+	const localesStore = getLocalesStore();
 </script>
 
 <div class="dropdown dropdown-end">

@@ -6,6 +6,9 @@ export default defineConfig({
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}'],
 		environment: 'happy-dom',
-		setupFiles: 'src/setupTests'
+		setupFiles: 'src/setupTests',
+		coverage: {
+			exclude: ['src/**/index.{js,ts}']
+		}
 	}
 });

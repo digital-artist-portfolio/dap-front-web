@@ -1,12 +1,10 @@
 <script lang="ts">
-	import { themeStore } from '$stores';
+	import { getThemeStore } from '$stores';
 	import { MoonIcon, SunIcon } from 'svelte-feather-icons';
-	import { twMerge, type ClassNameValue } from 'tailwind-merge';
+	import { twMerge } from 'tailwind-merge';
 
 	export let variant: 'circle' | 'rounded-square' = 'rounded-square';
-
-	let className: string | undefined = undefined;
-	export { className as class };
+	const themeStore = getThemeStore();
 
 	function handleChange(
 		e: Event & {
@@ -22,7 +20,7 @@
 	const circleStyles = 'btn-circle';
 </script>
 
-<div class={twMerge('flex items-center gap-2', className)}>
+<div class="flex items-center gap-2">
 	<label
 		class={twMerge(
 			'btn btn-ghost swap swap-rotate outline-1 outline-black',

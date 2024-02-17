@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { MenuIcon } from 'svelte-feather-icons';
-	import { LanguageDropdown, ThemeButton } from '$components';
-	import { infoStore } from '$stores';
+	import { LanguageDropdown, ThemeSwitch } from '$components';
+	import { getInfoStore } from '$stores';
 	import Drawer from '$components/drawer/Drawer.svelte';
 	import Nav from './Nav.svelte';
 
 	$: active = $page.route.id;
+	const infoStore = getInfoStore();
 </script>
 
 <header class="bg-base-100">
@@ -33,7 +33,7 @@
 				<!-- Configurations -->
 				<div class="flex gap-1">
 					<LanguageDropdown />
-					<ThemeButton />
+					<ThemeSwitch />
 				</div>
 			</div>
 
